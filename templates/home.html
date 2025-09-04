@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FWI Prediction</title>
+
+  <!-- Bootstrap 4 -->
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.6.2/css/bootstrap.min.css"
+  />
+</head>
+<body class="bg-light">
+  <div class="container py-5">
+    <h1 class="mb-4 text-center">FWI Prediction</h1>
+
+    <!-- Form -->
+    <form action="{{ url_for('predict_datapoint') }}" method="post" class="card p-4 shadow-lg">
+      <div class="form-group">
+        <label for="Temperature">Temperature</label>
+        <input type="number" step="any" class="form-control" id="Temperature" name="Temperature" placeholder="Enter Temperature" required>
+      </div>
+
+      <div class="form-group">
+        <label for="RH">RH</label>
+        <input type="number" step="any" class="form-control" id="RH" name="RH" placeholder="Enter RH" required>
+      </div>
+
+      <div class="form-group">
+        <label for="Ws">Ws</label>
+        <input type="number" step="any" class="form-control" id="Ws" name="Ws" placeholder="Enter Ws" required>
+      </div>
+
+      <div class="form-group">
+        <label for="Rain">Rain</label>
+        <input type="number" step="any" class="form-control" id="Rain" name="Rain" placeholder="Enter Rain" required>
+      </div>
+
+      <div class="form-group">
+        <label for="FFMC">FFMC</label>
+        <input type="number" step="any" class="form-control" id="FFMC" name="FFMC" placeholder="Enter FFMC" required>
+      </div>
+      
+
+      <div class="form-group">
+        <label for="DMC">DMC</label>
+        <input type="number" step="any" class="form-control" id="DMC" name="DMC" placeholder="Enter DMC" required>
+      </div>
+      <div class="form-group">
+        <label for="DC">DC</label>
+        <input type="number" step="any" class="form-control" id="DC" name="DC" placeholder="Enter DC" required>
+      </div>
+      <div class="form-group">
+        <label for="ISI">ISI</label>
+        <input type="number" step="any" class="form-control" id="ISI" name="ISI" placeholder="Enter ISI" required>
+      </div>
+      <div class="form-group">
+        <label for="BUI">BUI</label>
+        <input type="number" step="any" class="form-control" id="BUI" name="BUI" placeholder="Enter BUI" required>
+      </div>
+      
+
+      <div class="form-group">
+        <label for="Classes">Classes</label>
+        <input type="number" class="form-control" id="Classes" name="Classes" placeholder="Enter Classes" required>
+      </div>
+
+      <div class="form-group">
+        <label for="Region">Region</label>
+        <input type="text" class="form-control" id="Region" name="Region" placeholder="Enter Region" required>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-block btn-lg">Predict</button>
+    </form>
+
+    <h2>
+        The FWI prediction is {{results}}
+    </h2>
+  </div>
+</body>
+</html>
